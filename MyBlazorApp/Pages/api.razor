@@ -1,0 +1,21 @@
+
+
+
+
+@page "/apikey"
+
+@code {
+using DotNetEnv;
+
+Env.Load();
+
+    private string apiKey;
+
+    protected override void OnInitialized()
+    {
+        apiKey = Environment.GetEnvironmentVariable("API_KEY");
+    }
+}
+
+<h3>API Key:</h3>
+<p>@apiKey</p>
